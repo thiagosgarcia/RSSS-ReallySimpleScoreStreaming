@@ -1,0 +1,99 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div class="container" style="background: #BE9603; margin: 0 auto !important; width: 100% !important">
+  <div class="row">
+    <div class="col-md-12 align-self-center" style="text-align: center; background: black">
+      <!-- <h1>1º Campeonato de Pebolim!</h1> -->
+      <img src="./assets/logo.jpeg" style="height: 15em" />
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-lg-5 col-xs-5 col-sm-5  align-self-end" style="text-align: right">
+      <h1><strong>{{Score.HomeTeam.Name}}</strong></h1>
+    </div>
+    <div class="col-lg-2  col-xs-2 col-sm-2  align-self-center" style="text-align: center">
+
+    </div>
+    <div class="col-lg-5  col-xs-5 col-sm-5  align-self-start" style="text-align: left">
+      <h1><strong>{{Score.AwayTeam.Name}}</strong></h1>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-lg-5 col-xs-5 col-sm-5  align-self-end" style="text-align: right">
+      <h4>{{Score.HomeTeam.Player1}} / {{Score.HomeTeam.Player2}} </h4>
+    </div>
+    <div class="col-lg-2 col-xs-2 col-sm-2  align-self-center" style="text-align: center">
+
+    </div>
+    <div class="col-lg-5  col-xs-5 col-sm-5  align-self-start" style="text-align: left">
+      <h4>{{Score.AwayTeam.Player1}} / {{Score.AwayTeam.Player2}} </h4>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-lg-5  col-xs-5 col-sm-5  align-self-end" style="text-align: right; font-size: 20rem">
+      <span>{{Score.HomeTeamGoals}}</span>
+    </div>
+    <div class="col-lg-2  col-xs-2 col-sm-2  align-self-center align-text-bottom" style="text-align: center; font-size: 20rem">
+      <span class="text-center" style="font-size: 10rem">x</span>
+    </div>
+    <div class="col-lg-5  col-xs-5 col-sm-5  align-self-start" style="text-align: left; font-size: 20rem">
+      <span>{{Score.AwayTeamGoals}}</span>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-md-12 align-self-center align-text-center" style="text-align: center; font-size: 7rem">
+      {{Math.floor(Score.TimeLeft / 60)}}:{{ (Score.TimeLeft % 60) < 10 ? "0" : "" }}{{Score.TimeLeft % 60}} </div>
+    </div>
+    <div *ngIf="!hidden">
+      <div class="row justify-content-center">
+        <div class="col-md-12 col-xs-12 col-sm-12  text-center">
+          <button class="btn btn-primary btn-lg " type="button" (click)="hidden = !hidden">Hide Controls</button>
+        </div>
+        <div class="col-md-6 col-xs-6 col-sm-6 align-self-end text-right">
+          {{Score.HomeTeam.Name}}
+        </div>
+        <div class="col-md-6 col-xs-6 col-sm-6 align-self-start">
+          {{Score.AwayTeam.Name}}
+        </div>
+        <div class="col-md-6 col-xs-6 col-sm-6 align-self-end">
+          <button class="btn btn-success btn-lg pull-right" (click)="plusHome()">+</button>
+        </div>
+        <div class="col-md-6 col-xs-6 col-sm-6 align-self-start">
+          <button class="btn btn-success btn-lg pull-left" (click)="plusAway()">+</button>
+        </div>
+      </div>
+      <div class="col-md-6 col-xs-6 col-sm-6 align-self-center">
+        <button class="btn btn-danger btn-sm pull-right" (click)="minusHome()">-</button>
+      </div>
+      <div class="col-md-6 col-xs-6 col-sm-6 align-self-start">
+        <button class="btn btn-danger btn-sm pull-left" (click)="minusAway()">-</button><br />
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-md-6 col-xs-6 col-sm-6 ">
+          <input class="form-control" [(ngModel)]="matchNumber">
+        </div>
+        <div class="col-md-6 col-xs-6 col-sm-6 ">
+          Match Number = {{matchNumber}}
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-md-6 col-xs-6 col-sm-6 ">
+          <input class="form-control" [(ngModel)]="MatchDefaultTime">
+        </div>
+        <div class="col-md-6 col-xs-6 col-sm-6 ">
+          Time Left = {{Score.TimeLeft}}
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-md-4 col-xs-4 col-sm-4  text-center">
+          <button class="btn btn-lg btn-danger" (click)="resetTimer()"><span class="glyphicon glyphicon-repeat" aria-hidden="true"></span></button>
+        </div>
+        <div class="col-md-4 col-xs-4 col-sm-4  text-center">
+          <button class="btn btn-lg btn-success" (click)="startTimer()"><span class="glyphicon glyphicon-play" aria-hidden="true"></span></button>
+        </div>
+        <div class="col-md-4 col-xs-4 col-sm-4  text-center">
+          <button class="btn btn-lg" (click)="stopTimer()"><span class="glyphicon glyphicon-stop" aria-hidden="true"></span></button>
+        </div>
+      </div>
+    </div>
+  </div>
