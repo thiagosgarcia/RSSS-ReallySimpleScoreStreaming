@@ -81,4 +81,4 @@ Content-Type: application/json
   - Click `stop` to pause the countdown timer
   - Whenever is needed, you can click `plus` and `minus`buttons to control scores for each team
   
-  **NOTE**: it is needed the control screen to keep on. This version is **controlled by the UI**, the server is kind of _dummy_ and only gets the requests. As said before, this is a 4-hour solution, it _is going_ to get better =)
+  **NOTE**: it is needed to keep the control screen on during matches. This version is **controlled by the UI**, the server is kind of _dummy_ and only gets the requests. As said before, this is a 4-hour solution, it _is going_ to get better =)
