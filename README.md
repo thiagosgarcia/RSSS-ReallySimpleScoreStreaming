@@ -3,6 +3,9 @@ A really really simple score streaming originally made in .net core and angular 
 
 This is a 4-hour development solution to a 'not-so-big problem'. So, somethings could and should be made differently, and holpefully will be. But, this solved our problem and I will start to get this better from now.
 
+https://github.com/thiagosgarcia/RSSS-ReallySimpleScoreStreaming/blob/master/screen1.PNG
+https://github.com/thiagosgarcia/RSSS-ReallySimpleScoreStreaming/blob/master/screen2.PNG
+
 ## Setup
 ### Server
   - Restore nuget packages
