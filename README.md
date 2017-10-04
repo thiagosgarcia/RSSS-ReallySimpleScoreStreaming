@@ -9,7 +9,7 @@ https://github.com/thiagosgarcia/RSSS-ReallySimpleScoreStreaming/blob/master/scr
 ## Setup
 ### Server
   - Restore nuget packages
-  - Create `connections.config` file at the project root and put you connection strings
+  - Create `connections.config` file at the project root and put your connection strings
   - Run `Update-Database`
   - Deploy through you favorite solution (IIS, msbuild, etc)
   - Note the configured port and update `baseUrl` string for UI (currently at `Web\LiveScore\src\app\app.service.ts`)
